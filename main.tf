@@ -1,7 +1,15 @@
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 2.13"  
+    }
+  }
+}
+
 provider "docker" {
   host = "npipe:////./pipe/docker_engine"
 }
-
 variable "number_of_containers" {
   type    = number
   default = 1
