@@ -35,6 +35,6 @@ resource "docker_container" "nginx_containers" {
   name  = "nginx-${count.index + 1}"
   ports {
     internal = 80
-    external =8000 +var.count.index +1
+    external =8000 + count.index +1
   }
 }
